@@ -8,51 +8,99 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+	 <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+   <link rel="stylesheet" type="text/css" href="/css/styles.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+ 
 		
     <title>Pesquisa</title>
   </head>
   <body>
 
     <nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">Pesquisa</span>
-</nav>
+      <span class="navbar-brand mb-0 h1">Pesquisa</span>
+    </nav>
 
-<div class="container-fluid">
 
-  <div class="container">
-<h6 class="text-uppercase font-weight-normal">Title h4 </h6>
-  <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm border bg-light">Custom column padding</div>
-    <div class="col-sm border bg-light">Custom column padding</div>
-    <div class="col-sm border bg-light">Custom column padding</div>
-    <div class="col-sm border bg-light">Custom column padding</div>
-    <div class="col-sm border bg-light">Custom column padding</div>
-    <div class="col-sm border bg-light">Custom column padding</div>
     
-  </div>
-</div>
-</div>
+    <div class="container">
+      <div class="card border-white mb-4"></div>
+        
 
-  
-<div class="container"> 
-<h4>Title h4</h4>
-  <table class="table table-hover" id="datatable">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome da Loja</th>
-      <th scope="col">Satisfação</th>
+      
+          <div class="card border-white mb-4">
+          <div class="card-header bg-transparent">
+           
+            Consolidado das lojas</div>
+            <div class = "card-body">
             
-    </tr>
-  </thead>
+            <div class="container-fluid">
 
-</table>
-</div>
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col">Satisfação</div>
+                  <div class="col">Avaliações</div>
+                  <div class="col">Excelente</div>
+                  <div class="col">Muito bom</div>
+                  <div class="col">Razoável</div>
+                  <div class="col">Ruim</div>
+                  <div class="col">Horrível</div>
+                  <div class="w-100"></div>
+                  <div class="col h2">15%</div>
+                  <div class="col h2">2075</div>
+                  <div class="col h2"><i class="far fa-grin-hearts"></i> 30%</div>
+                  <div class="col h2"><i class="far fa-grin"></i> 40%</div>
+                  <div class="col h2"><i class="far fa-meh"></i> 50%</div>
+                  <div class="col h2"><i class="far fa-frown"></i> 60%</div>
+                  <div class="col h2"><i class="far fa-angry"></i> 70%</div>
+                </div>
+              </div>
 
-</div>
+
+              
+            </div>
+
+            </div>
+          </div>
+        
+          <!-- <div class="container"> 
+            <h6 class ="text-uppercase font-weight-normal">Lojas</h6>
+            <table class="table table-hover" id="datatable">
+              <thead class="thead-light">
+                <tr>
+                   <th scope="col">#</th>
+                   <th scope="col">Nome da Loja</th>
+                  <th scope="col">Satisfação</th>            
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>    
+         -->
+
+            <div class="card border-white mb-4">
+          <div class="card-header bg-transparent">
+           
+            Lojas</div>
+            <div class = "card-body">
+            <div class="table-responsive">
+            <table class="table table-hover" id="datatable">
+              <thead class="thead-light">
+                <tr>
+                   <th scope="col">#</th>
+                   <th scope="col">Nome da Loja</th>
+                  <th scope="col">Satisfação</th>            
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+        </div> 
+      </div>
+         
 
 
   
@@ -65,12 +113,19 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready( function () {
-    $('#datatable').DataTable();
-  });
-    </script>
+	 <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#datatable').DataTable( {
+        "language": {
+            "url": "http://cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    } );
+} );
+
+  </script>
 
     <script>
     $.getJSON("data.json", function(data){
@@ -86,5 +141,6 @@
       $("<tbody/>", {html: itens.join("")}).appendTo("table");
     });
 	</script>
+  
   </body>
 </html>
