@@ -20,20 +20,15 @@
   <body>
 
     <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Pesquisa</span>
+      <span class="navbar-brand mb-0 h1"><i class="fas fa-chart-pie"></i> Pesquisa</span>
     </nav>
-
 
     
     <div class="container">
       <div class="card border-white mb-4"></div>
-        
 
-      
           <div class="card border-white mb-4">
-          <div class="card-header bg-transparent">
-           
-            Consolidado das lojas</div>
+          <div class="card-header bg-transparent"><i class="fas fa-percent"></i> Consolidado das lojas</div>
             <div class = "card-body">
             
             <div class="container-fluid">
@@ -81,9 +76,7 @@
          -->
 
             <div class="card border-white mb-4">
-          <div class="card-header bg-transparent">
-           
-            Lojas</div>
+          <div class="card-header bg-transparent"><i class="fas fa-table"></i> Lojas</div>
             <div class = "card-body">
             <div class="table-responsive">
             <table class="table table-hover" id="datatable">
@@ -134,7 +127,25 @@
         itens.push("<tr>");
         itens.push("<td id=''"+key+"''>"+val.id+"</td>");          
         itens.push("<td id=''"+key+"''>"+val.storeName+"</td>");
-        itens.push("<td id=''"+key+"''>"+val.score+"</td>");
+        switch(val.score){
+          case 5:
+            itens.push("<td id=''"+key+"''>"+"Excelente"+"</td>");
+          break;
+          case 4:
+            itens.push("<td id=''"+key+"''>"+"Muito bom"+"</td>");
+          break;
+          case 3:
+            itens.push("<td id=''"+key+"''>"+"Razoável"+"</td>");
+          break;
+          case 2:
+            itens.push("<td id=''"+key+"''>"+"Ruim"+"</td>");
+          break;
+          case 1:
+            itens.push("<td id=''"+key+"''>"+"Horrível"+"</td>");
+          break;
+          default:
+          itens.push("<td id=''"+key+"''>"+"Sem dados"+"</td>");
+        }
         itens.push("</tr>");       
        
       });
