@@ -168,10 +168,13 @@
 
         });
 
+        satisfacao1 = ((excelente1+muitobom1)/total1)*100;
+          satisfacao2 = ((excelente2+muitobom2)/total2)*100;
+
           itens.push("<tr>");
           itens.push("<td >"+"1"+"</td>");          
           itens.push("<td >"+"Dito Savassi"+"</td>");
-          itens.push("<td >"+satisfacao1+"</td>");
+          itens.push("<td >"+satisfacao1+"%</td>");
           itens.push("<td >"+total1+"</td>");
           itens.push("<td >"+excelente1+"</td>");
           itens.push("<td >"+muitobom1+"</td>");
@@ -183,7 +186,7 @@
           itens.push("<tr>");
           itens.push("<td >"+"2"+"</td>");          
           itens.push("<td >"+"Dito Rio de Janeiro"+"</td>");
-          itens.push("<td >"+satisfacao2+"</td>");
+          itens.push("<td >"+satisfacao2+"%</td>");
           itens.push("<td >"+total2+"</td>");
           itens.push("<td >"+excelente2+"</td>");
           itens.push("<td >"+muitobom2+"</td>");
@@ -194,8 +197,7 @@
         
 
 
-          satisfacao1 = ((excelente1+muitobom1)/total1)*100;
-          satisfacao2 = ((excelente2+muitobom2)/total2)*100;
+          
         $("<tbody/>", {html: itens.join("")}).appendTo("table");
 
         satisfacao = ((excelente1+muitobom1+excelente2+muitobom2)/total)*100;
