@@ -64,7 +64,13 @@
                 <tr>
                  <th scope="col">#</th>
                  <th scope="col">Nome da Loja</th>
-                 <th scope="col">Satisfação</th>            
+                 <th scope="col">Satisfação</th>
+                 <th scope="col">Avaliações</th>
+                 <th scope="col">Excelente</th>  
+                 <th scope="col">Muito bom</th>  
+                 <th scope="col">Razoável</th>  
+                 <th scope="col">Ruim</th>  
+                 <th scope="col">Horrível</th>                
                </tr>
              </thead>
            </table>
@@ -110,51 +116,97 @@
     <script>
       $.getJSON("data.json", function(data){
         var itens = [];
-        var excelente=0; var muitobom=0; var razoavel=0; var ruim=0; var horrivel=0; var total=0; var satisfacao=0;
+        total=0; var satisfacao=0;
+        var excelente1=0; var muitobom1=0; var razoavel1=0; var ruim1=0; var horrivel1=0; var total1=0; var satisfacao1=0;
+        var excelente2=0; var muitobom2=0; var razoavel2=0; var ruim2=0; var horrivel2=0; var total2=0; var satisfacao2=0;
         $.each(data, function(key, val){
           total = total+1;
 
-          itens.push("<tr>");
-          itens.push("<td id=''"+key+"''>"+val.id+"</td>");          
-          itens.push("<td id=''"+key+"''>"+val.storeName+"</td>");
-          switch(val.score){
-            case 5:
-            itens.push("<td id=''"+key+"''>"+"Excelente"+"</td>");
-            excelente=excelente+1;
+          if(val.storeId == 1){
+            total1=total1+1;
+            switch(val.score){
+            case 5:            
+            excelente1=excelente1+1;
             break;
-            case 4:
-            itens.push("<td id=''"+key+"''>"+"Muito bom"+"</td>");
-            muitobom=muitobom+1;
+            case 4:            
+            muitobom1=muitobom1+1;
             break;
-            case 3:
-            itens.push("<td id=''"+key+"''>"+"Razoável"+"</td>");
-            razoavel=razoavel+1;
+            case 3:            
+            razoavel1=razoavel1+1;
             break;
-            case 2:
-            itens.push("<td id=''"+key+"''>"+"Ruim"+"</td>");
-            ruim=ruim+1;
+            case 2:            
+            ruim1=ruim1+1;
             break;
-            case 1:
-            itens.push("<td id=''"+key+"''>"+"Horrível"+"</td>");
-            horrivel=horrivel+1;
-            break;
-            default:
-            itens.push("<td id=''"+key+"''>"+"Sem dados"+"</td>");
+            case 1:            
+            horrivel1=horrivel1+1;
+            break;           
+            }
           }
-          itens.push("</tr>");
+          
+
+          if(val.storeId == 2){
+            total2=total2+1;
+            switch(val.score){
+            case 5:            
+            excelente2=excelente2+1;
+            break;
+            case 4:            
+            muitobom2=muitobom2+1;
+            break;
+            case 3:            
+            razoavel2=razoavel2+1;
+            break;
+            case 2:            
+            ruim2=ruim2+1;
+            break;
+            case 1:            
+            horrivel2=horrivel2+1;
+            break;           
+            }
+          }
+
 
         });
+
+          itens.push("<tr>");
+          itens.push("<td >"+"1"+"</td>");          
+          itens.push("<td >"+"Dito Savassi"+"</td>");
+          itens.push("<td >"+satisfacao1+"</td>");
+          itens.push("<td >"+total1+"</td>");
+          itens.push("<td >"+excelente1+"</td>");
+          itens.push("<td >"+muitobom1+"</td>");
+          itens.push("<td >"+razoavel1+"</td>");
+          itens.push("<td >"+ruim1+"</td>");
+          itens.push("<td >"+horrivel1+"</td>");          
+          itens.push("</tr>");
+
+          itens.push("<tr>");
+          itens.push("<td >"+"2"+"</td>");          
+          itens.push("<td >"+"Dito Rio de Janeiro"+"</td>");
+          itens.push("<td >"+satisfacao2+"</td>");
+          itens.push("<td >"+total2+"</td>");
+          itens.push("<td >"+excelente2+"</td>");
+          itens.push("<td >"+muitobom2+"</td>");
+          itens.push("<td >"+razoavel2+"</td>");
+          itens.push("<td >"+ruim2+"</td>");
+          itens.push("<td >"+horrivel2+"</td>");          
+          itens.push("</tr>");
+        
+
+
+          satisfacao1 = ((excelente1+muitobom1)/total1)*100;
+          satisfacao2 = ((excelente2+muitobom2)/total2)*100;
         $("<tbody/>", {html: itens.join("")}).appendTo("table");
 
-        satisfacao = ((excelente+muitobom)/total)*100;
+        satisfacao = ((excelente1+muitobom1+excelente2+muitobom2)/total)*100;
 
         document.getElementById("satisfacao").innerHTML = satisfacao+"%";
         document.getElementById("avaliacoes").innerHTML = total;
-        document.getElementById("excelente").innerHTML = excelente;
-        document.getElementById("muitobom").innerHTML = muitobom;
-        document.getElementById("razoavel").innerHTML = razoavel;
-        document.getElementById("ruim").innerHTML = ruim;
-        document.getElementById("horrivel").innerHTML = horrivel;
+        document.getElementById("excelente").innerHTML = excelente1+excelente2;
+        document.getElementById("muitobom").innerHTML = muitobom1+muitobom2;
+        document.getElementById("razoavel").innerHTML = razoavel1+razoavel2;
+        document.getElementById("ruim").innerHTML = ruim1+ruim2;
+        document.getElementById("horrivel").innerHTML = horrivel1+horrivel2;
       });
     </script>
   </body>
